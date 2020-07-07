@@ -47,21 +47,40 @@ console.log(array)
 // которые содержатся в строке.
 // Гласными являются «a», «e», «i», «o», «u».
 let text = `I live in Aleksandriya`
-function findVowels(someText){
+function findVowels(someText) {
+    let vowels = [`a`, `e`, `i`, `o`, `u`]
     let counter = 0;
-    for (let i = 0; i < someText.length; i++){
-        
+    for (let i = 0; i < someText.length; i++) {
+        if ((vowels).includes(someText[i].toLowerCase())) {
+            counter++;
+        }
     }
+    return `В вашем предложение ${counter} гласных букв`
 }
+console.log(findVowels(text));
 
 // Задача 6:
-// Напишите функцию range, принимающую два аргумента, начало и конец диапазона, и возвращающую массив, который содержит все числа из него, включая начальное и конечное.
+// Напишите функцию range, принимающую два аргумента, начало и конец диапазона, 
+// и возвращающую массив, который содержит все числа из него, включая начальное и конечное.
 
 // Задача 7:
 // Дан массив [ [1, 2, 3], [4, 5, 6], [7,8,9] ]. Выведите на экран цифру 4 из этого массива.
+let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+console.log(array[1][0])
 
 // Задача 8:
 // Посчитайте сумму элементов массива из Задания 7;
+let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+function sumArray(arr){
+    let sum = 0;
+    for(let i = 0; i<arr.length; i++){
+        for (let j=0; j < arr[i].length; j++){
+            sum = sum + arr[i][j] 
+        }
+    }
+    return sum
+}
+console.log(sumArray(array))
 
 // Задача 9:
 // Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
